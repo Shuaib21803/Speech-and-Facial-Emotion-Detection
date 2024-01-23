@@ -1,8 +1,8 @@
 # Speech and Facial Emotion Detection
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Shuaib21803/Speech-and-Facial-Emotion-Detection-)
-![GitHub contributors](https://img.shields.io/github/contributors/Shuaib21803/Speech-and-Facial-Emotion-Detection-)
-![GitHub forks](https://img.shields.io/github/forks/Shuaib21803/Speech-and-Facial-Emotion-Detection-)
+![GitHub repo size](https://img.shields.io/github/repo-size/Shuaib21803/Speech-and-Facial-Emotion-Detection)
+![GitHub contributors](https://img.shields.io/github/contributors/Shuaib21803/Speech-and-Facial-Emotion-Detection)
+![GitHub forks](https://img.shields.io/github/forks/Shuaib21803/Speech-and-Facial-Emotion-Detection)
 
 ## Table of Contents
 - [Introduction](#introduction)
