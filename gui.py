@@ -15,7 +15,7 @@ def FacialExpressionModel(json_file, weights_file):
         loaded_model_json = file.read()
         model = model_from_json(loaded_model_json)
     model.load_weights(weights_file)
-    model.compile(optimizer='adam', loss = 'categorical_entropy', metrics=['accuracy'])
+    model.compile(optimizer='adam', loss = 'categorical_crossentropy', metrics=['accuracy'])
     return model
 
 
@@ -35,8 +35,8 @@ top.configure(background='#CDCDCD')
 label1 = Label(top, background='#CDCDCD', font=('arial',15,'bold'))
 sign_image = Label(top)
 facec = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-model_f = FacialExpressionModel("model_a1_f.json","model_weights1.h5")
-model_s = SpeechExpressionModel("model_a1_s.json","model_weights3.h5")
+model_f = FacialExpressionModel("model_a1_f.json","model_weights.h5")
+model_s = SpeechExpressionModel("model_a1_s.json","model_weights4.h5")
 EMOTIONS_LIST_f = ["Angry","Disgust","Fear","Happy","Neutral","Sad","Surprise"]
 EMOTIONS_LIST_s = ['neutral','calm','happy','sad','angry','fearful','disgust','surprised']
 
@@ -56,6 +56,7 @@ def Detect_f(file_path):
         for (x,y,w,h) in faces:
             fc = gray_image[y:y+h,x:x+w]
             roi = cv2.resize(fc,(48,48))
+            roi = roi/255.0
             pred = EMOTIONS_LIST_f[np.argmax(model_f.predict(roi[np.newaxis,:,:,np.newaxis]))]
         dis = "Predicted Emotion : " + pred
         label1.configure(foreground="#011638", text=dis)
